@@ -9,7 +9,6 @@ use std::fmt::Write;
 use std::char;
 use std::collections::HashMap;
 
-
 fn hexprint(raw: &[u8; 6]) {
     let mut s = String::new();
     for &byte in raw.iter() {
@@ -22,6 +21,7 @@ fn truncate(raw: &[u8]) -> [u8; 6] {
     [raw[26], raw[27], raw[28], raw[29], raw[30], raw[31]]
 }
 
+// Returns semirandom a-zA-Z0-9 from byte
 fn to_valid_char(b: u8) -> char {
 	let b_32 = (b % 62) as u32;
 	match b_32 {
@@ -76,7 +76,6 @@ fn main() {
 					
 					if h1[25] & 0x3 == h2[25] & 0x3	{
 						println!("\t-> {:08}", i);
-						
 						print!("EVO: {} .. {} -> ", &str1, &str2);				
 						hexprint(&thex);
 						break;
