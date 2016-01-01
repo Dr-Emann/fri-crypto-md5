@@ -6,3 +6,8 @@ authors = ["gareins <ozbolt.menegatti@gmail.com>"]
 [dependencies]
 rust-crypto = "0.2.34"
 rand = "0.3.12"
+scoped_threadpool = "0.1"
+num_cpus = "0.2"
+
+[profile.release]
+debug = true
